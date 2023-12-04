@@ -24,7 +24,7 @@
     "require": {
         "php": "^8.0",
         "contao/core-bundle": "^4.13 || ^5.0",
-        "heimrichhannot/contao-frontend-framework-bundle": "dev-main"
+        "heimrichhannot/contao-frontend-framework-bundle": "^0.1"
     },
     "autoload": {
         "psr-4": {
