@@ -1,0 +1,37 @@
+{
+    "name": "heimrichhannot/contao-enhanced-accordions-bundle",
+    "description": "This bundle enhances contao accordions.",
+    "keywords": [
+        "contao",
+        "frontend",
+        "accordion",
+        "bootstrap"
+    ],
+    "type": "contao-bundle",
+    "homepage": "https://github.com/heimrichhannot/contao-enhanced-accordions-bundle",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Heimrich & Hannot",
+            "email": "digitales@heimrich-hannot.de",
+            "homepage": "https://www.heimrich-hannot.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/heimrichhannot/contao-enhanced-accordions-bundle/issues"
+    },
+    "require": {
+        "php": "^8.0",
+        "contao/core-bundle": "^4.13 || ^5.0",
+        "heimrichhannot/contao-frontend-framework-bundle": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "HeimrichHannot\\EnhancedAccordionsBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "HeimrichHannot\\EnhancedAccordionsBundle\\ContaoManager\\Plugin"
+    }
+}

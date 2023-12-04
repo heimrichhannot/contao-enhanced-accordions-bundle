@@ -1,0 +1,5 @@
+services:
+  HeimrichHannot\EnhancedAccordionsBundle\:
+    resource: '../src/{EventListener,Helper}/*'
+    autowire: true
+    autoconfigure: true
