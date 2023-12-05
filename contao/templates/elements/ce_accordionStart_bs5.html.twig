@@ -1,12 +1,16 @@
+{% set open = (accordion_first is defined ? accordion_first : false) and (open_first is defined ? open_first : true) %}
+
 {% if accordion_first|default %}
     <div class="accordion" id="accordion_{{ accordion_parentId }}">
 {% endif %}
 
+{%- block content %}
 <div class="{{ class }} ce_accordion accordion-item block"{{ cssID }}{{ style|default ? ' style="' ~ style ~ '"' }}>
-    <h3 class="accordion-header mb-0" id="heading_{{ id }}">
-        <button class="accordion-button{% if not accordion_first|default %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_{{ id }}"{% if accordion_first|default %} aria-expanded="true"{% else %}  aria-expanded="false"{% endif %} aria-controls="collapse_{{ id }}">
+    <{{ titleElement|default('h3') }} class="accordion-header mb-0" id="heading_{{ id }}">
+        <button class="accordion-button{% if not open %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_{{ id }}"{% if open %} aria-expanded="true"{% else %}  aria-expanded="false"{% endif %} aria-controls="collapse_{{ id }}">
             {{ headline }}
         </button>
-    </h3>
-    <div id="collapse_{{ id }}" class="accordion-collapse collapse{% if accordion_first|default %} show{% endif %}" aria-labelledby="heading_{{ id }}"{% if accordion_parentId|default %} data-bs-parent="#accordion_{{ accordion_parentId }}"{% endif %}>
+    </{{ titleElement|default('h3') }}>
+    <div id="collapse_{{ id }}" class="accordion-collapse collapse{% if open %} show{% endif %}" aria-labelledby="heading_{{ id }}"{% if accordion_parentId|default %} data-bs-parent="#accordion_{{ accordion_parentId }}"{% endif %}>
         <div class="accordion-body">
+{% endblock %}

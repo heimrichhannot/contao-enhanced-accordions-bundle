@@ -26,7 +26,27 @@ In your theme settings, select bootstrap 5 frontend framework and activate the c
 This adds some css classes and markup to make the default work with boostrap 5 javascript component.
 This is no complete replacement, as the default templates can not completely adjust without overriding for bootstrap 5.
 
-The bundle also provides bootstrap 5 accordion templates, that can be selected as custom template.
+The bundle also provides bootstrap 5 accordion templates, that can be selected as custom template, copied to project or extended in your project templates.
+
+If you extend the templates, there are some adjustments you can make:
+
+```twig
+{% extends "@Contao_HeimrichHannotEnhancedAccordionsBundle/ce_accordionStart_bs5.html.twig" %}
+
+{% set open_first = true %}
+{% set titleElement = 'h3' %}
+```
+
+```twig
+{% extends "@Contao_HeimrichHannotEnhancedAccordionsBundle/ce_accordionStop_bs5.html.twig" %}
+```
+
+```twig
+{% extends "@Contao_HeimrichHannotEnhancedAccordionsBundle/ce_accordionElement_bs5.html.twig" %}
+
+{% set open_first = true %}
+{% set titleElement = 'h3' %}
+```
 
 ### Additional template variables
 
